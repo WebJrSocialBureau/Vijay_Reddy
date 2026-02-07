@@ -34,9 +34,6 @@ const Navbar = () => {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="flex items-center gap-3 group cursor-pointer"
         >
-          <div className="w-10 h-10 bg-accent-red rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg shadow-accent-red/20 group-hover:rotate-12 transition-transform duration-500">
-            V
-          </div>
           <div className="flex flex-col">
             <span className="text-lg font-bold tracking-tighter leading-none">
               VIJAY REDDY
