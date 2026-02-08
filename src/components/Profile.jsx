@@ -77,7 +77,7 @@ const Profile = () => {
                     variants={itemVariants}
                     className="flex items-center gap-6 group cursor-default"
                   >
-                    <span className="text-4xl font-black text-white/5 opacity-50 group-hover:text-accent-red group-hover:opacity-100 transition-all duration-500">
+                    <span className="text-4xl font-black text-accent-red opacity-50 group-hover:text-white/30 group-hover:opacity-100 transition-all duration-500">
                       {stat.value}
                     </span>
                     <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 group-hover:text-slate-300 transition-colors">
@@ -135,9 +135,7 @@ const Profile = () => {
                     through Truth."
                   </p>
                 </div>
-                <div className="mt-8 text-white font-black text-4xl opacity-20">
-                  BIG TV
-                </div>
+                <a href="https://bigtvlive.com" target="_blank"><img src="/BigTvLive.png" alt="bigtv" className="w-30 h-auto object-cover py-5" /></a>
               </div>
               <motion.div
                 animate={{

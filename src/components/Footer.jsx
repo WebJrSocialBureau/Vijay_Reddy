@@ -319,11 +319,8 @@ const Footer = () => {
           <div className="lg:col-span-5 space-y-8">
             <div className="flex items-center gap-4">
               <div className="flex flex-col">
-                <span className="text-2xl font-black tracking-tighter leading-none">
-                  VIJAY REDDY
-                </span>
                 <span className="text-xs tracking-[0.4em] font-medium text-accent-red">
-                  VENNAM
+                  VIJAY REDDY VENNAM
                 </span>
               </div>
             </div>
@@ -382,7 +379,7 @@ const Footer = () => {
                     Official Email
                   </span>
                   <span className="text-sm font-bold text-white group-hover:text-accent-red transition-colors">
-                    contact@vijayreddy.pro
+                    vijay@pravasamedia.com
                   </span>
                 </div>
               </div>

@@ -36,10 +36,7 @@ const Navbar = () => {
         >
           <div className="flex flex-col">
             <span className="text-lg font-bold tracking-tighter leading-none">
-              VIJAY REDDY
-            </span>
-            <span className="text-[10px] tracking-[0.3em] font-medium text-accent-red">
-              VENNAM
+              VIJAY REDDY VENNAM
             </span>
           </div>
         </motion.div>

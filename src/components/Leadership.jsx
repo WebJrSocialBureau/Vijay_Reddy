@@ -15,7 +15,7 @@ const Leadership = () => {
       tagline: "24/7 Satellite News",
       desc: "Revolutionizing Telugu and Malayalam news markets with a commitment to authenticity and real-time reporting.",
       icon: <Tv size={32} />,
-      link: "#",
+      link: "https://www.bigtvlive.com",
       accent: "from-accent-red to-red-600",
     },
     {
@@ -23,7 +23,7 @@ const Leadership = () => {
       tagline: "Academic Excellence",
       desc: "Setting the national benchmark for integrated educational systems, nurturing future leaders in Medicine and Engineering.",
       icon: <GraduationCap size={32} />,
-      link: "#",
+      link: "https://bigacademyedu.com",
       accent: "from-blue-600 to-indigo-600",
     },
   ];
@@ -101,6 +101,7 @@ const Leadership = () => {
               </div>
 
               <div className="relative z-10">
+                <a href={item.link} target="_blank">
                 <span className="text-xs uppercase tracking-widest text-accent-red font-bold mb-4 block">
                   {item.tagline}
                 </span>
@@ -121,6 +122,7 @@ const Leadership = () => {
                     View Ecosystem
                   </span>
                 </motion.div>
+                </a>
               </div>
             </motion.div>
           ))}
