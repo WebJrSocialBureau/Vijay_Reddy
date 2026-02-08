@@ -71,11 +71,11 @@ const Hero = () => {
               className="flex flex-wrap gap-6 items-center"
             >
               <a
-                href="#profile"
+                href="#identity"
                 className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest hover:text-accent-red transition-all group"
               ><button className="btn-premium">Explore The Vision</button></a>
               <a
-                href="#leadership"
+                href="#visions"
                 className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest hover:text-accent-red transition-all group"
               >
                 Foundations

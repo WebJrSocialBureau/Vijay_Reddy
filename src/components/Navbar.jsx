@@ -13,9 +13,9 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Identity", href: "#profile" },
-    { name: "Visions", href: "#leadership" },
-    { name: "Journey", href: "#timeline" },
+    { name: "Identity", href: "#identity" },
+    { name: "Visions", href: "#visions" },
+    { name: "Journey", href: "#journey" },
     { name: "Impact", href: "#impact" },
   ];
 

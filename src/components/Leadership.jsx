@@ -30,7 +30,7 @@ const Leadership = () => {
 
   return (
     <section
-      id="leadership"
+      id="visions"
       className="section-padding overflow-hidden font-sans"
     >
       <div className="container-custom">

@@ -21,7 +21,7 @@ const Timeline = () => {
 
   return (
     <section
-      id="timeline"
+      id="journey" 
       className="section-padding bg-navy-950/30 overflow-hidden font-sans"
     >
       <div className="container-custom">

@@ -36,7 +36,7 @@ const Profile = () => {
 
   return (
     <section
-      id="profile"
+      id="identity"
       className="section-padding bg-navy-950/50 relative font-sans"
     >
       <div className="container-custom">
