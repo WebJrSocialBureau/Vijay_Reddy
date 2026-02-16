@@ -69,7 +69,7 @@ const BlogSection = () => {
                   {blog.image && (
                     <div className="h-48 overflow-hidden">
                       <img
-                        src={`http://localhost:5000${blog.image}`}
+                        src={`${import.meta.env.VITE_IMAGE_URL || "http://localhost:5000"}${blog.image}`}
                         alt={blog.title}
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
                         loading="lazy"

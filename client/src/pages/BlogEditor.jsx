@@ -34,7 +34,9 @@ const BlogEditor = () => {
             image: blog.image,
           });
           if (blog.image) {
-            setImagePreview(`http://localhost:5000${blog.image}`);
+            setImagePreview(
+              `${import.meta.env.VITE_IMAGE_URL || "http://localhost:5000"}${blog.image}`,
+            );
           }
         } catch (err) {
           setError("Failed to fetch blog");
