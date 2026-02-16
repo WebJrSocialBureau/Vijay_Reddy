@@ -1,13 +1,15 @@
 import axios from "axios";
 
 const getBaseURL = () => {
-  const envURL = import.meta.env.VITE_API_URL;
-  if (!envURL) return "http://localhost:5000/api/v1";
-  // Ensure it ends with /api/v1 if it's pointing to the live domain
-  if (envURL.includes("onrender.com") && !envURL.endsWith("/api/v1")) {
-    return `${envURL.replace(/\/$/, "")}/api/v1`;
+  let envURL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/v1";
+  
+  // Auto-fix Render URLs missing the api/v1 suffix
+  if (envURL.includes("onrender.com") && !envURL.includes("/api/v1")) {
+    envURL = `${envURL.replace(/\/$/, "")}/api/v1`;
   }
-  return envURL;
+
+  // CRITICAL: Ensure it ends with a slash for proper Axios path concatenation
+  return envURL.endsWith("/") ? envURL : `${envURL}/`;
 };
 
 const API = axios.create({
