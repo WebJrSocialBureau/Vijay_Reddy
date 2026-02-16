@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import Lenis from "@studio-freight/lenis";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Pages (to be created)
 import Home from "./pages/Home";
@@ -28,6 +29,8 @@ function App() {
       infinite: false,
     });
 
+    window.lenis = lenis;
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -37,11 +40,13 @@ function App() {
 
     return () => {
       lenis.destroy();
+      window.lenis = null;
     };
   }, []);
 
   return (
     <Router>
+      <ScrollToTop />
       <Toaster
         position="top-right"
         toastOptions={{
