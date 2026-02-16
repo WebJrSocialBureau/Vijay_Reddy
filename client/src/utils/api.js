@@ -1,7 +1,17 @@
 import axios from "axios";
 
+const getBaseURL = () => {
+  const envURL = import.meta.env.VITE_API_URL;
+  if (!envURL) return "http://localhost:5000/api/v1";
+  // Ensure it ends with /api/v1 if it's pointing to the live domain
+  if (envURL.includes("onrender.com") && !envURL.endsWith("/api/v1")) {
+    return `${envURL.replace(/\/$/, "")}/api/v1`;
+  }
+  return envURL;
+};
+
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api/v1",
+  baseURL: getBaseURL(),
 });
 
 // Add interceptor for JWT token

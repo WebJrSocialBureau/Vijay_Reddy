@@ -35,7 +35,7 @@ const BlogEditor = () => {
           });
           if (blog.image) {
             setImagePreview(
-              `${import.meta.env.VITE_IMAGE_URL || "http://localhost:5000"}${blog.image}`,
+              `${(import.meta.env.VITE_IMAGE_URL || "http://localhost:5000").replace(/\/$/, "")}${blog.image}`,
             );
           }
         } catch (err) {

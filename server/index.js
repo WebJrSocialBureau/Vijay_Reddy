@@ -4,6 +4,8 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const morgan = require('morgan');
 
+const path = require('path');
+
 dotenv.config();
 
 const app = express();
@@ -11,7 +13,7 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(cors());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Request Logger
 app.use((req, res, next) => {

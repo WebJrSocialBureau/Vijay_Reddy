@@ -95,7 +95,7 @@ const BlogDetail = () => {
           className="mb-16 aspect-video rounded-2xl overflow-hidden glass border border-white/5"
         >
           <img
-            src={`${import.meta.env.VITE_IMAGE_URL || "http://localhost:5000"}${blog.image}`}
+            src={`${(import.meta.env.VITE_IMAGE_URL || "http://localhost:5000").replace(/\/$/, "")}${blog.image}`}
             alt={blog.title}
             className="w-full h-full object-cover"
           />
