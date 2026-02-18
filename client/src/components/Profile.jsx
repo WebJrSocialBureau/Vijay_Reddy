@@ -64,7 +64,7 @@ const Profile = () => {
                 variants={itemVariants}
                 className="text-slate-400 mb-8 font-medium"
               >
-                Vijaya Kanth Reddy Vennam is not just a leader; he is a catalyst
+                Vijaya Reddy Vennam is not just a leader; he is a catalyst
                 for change. His journey from global pharmaceutical ventures in
                 the USA to pioneering digital media in India reflects a
                 relentless pursuit of excellence.
