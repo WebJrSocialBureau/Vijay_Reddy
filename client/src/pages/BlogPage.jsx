@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Calendar, User, Search } from "lucide-react";
 import API from "../utils/api";
+import SEO from "../components/SEO";
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
@@ -14,8 +15,8 @@ const BlogPage = () => {
       try {
         const { data } = await API.get("blogs");
         setBlogs(data.data.blogs);
-      } catch (err) {
-        console.error("Error fetching blogs:", err);
+      } catch {
+        console.error("Error fetching blogs:");
       } finally {
         setLoading(false);
       }
@@ -31,6 +32,12 @@ const BlogPage = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20 container-custom">
+      <SEO
+        title="Journal"
+        description="Insights, perspectives, and stories from Vijay Reddy Vennam's journey in leadership and social impact. Read our latest articles and updates."
+        keywords="Vijay Reddy Journal, Leadership Blog, Social Impact Stories, Vijay Reddy Blog"
+        url="/blog"
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

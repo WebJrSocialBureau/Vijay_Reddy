@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Calendar, User, ArrowLeft, Clock } from "lucide-react";
 import API from "../utils/api";
+import SEO from "../components/SEO";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -14,8 +15,8 @@ const BlogDetail = () => {
       try {
         const { data } = await API.get(`blogs/${id}`);
         setBlog(data.data.blog);
-      } catch (err) {
-        console.error("Error fetching blog:", err);
+      } catch {
+        console.error("Error fetching blog:");
       } finally {
         setLoading(false);
       }
@@ -38,6 +39,16 @@ const BlogDetail = () => {
 
   return (
     <article className="min-h-screen pt-32 pb-20 container-custom">
+      <SEO
+        title={blog.title}
+        description={blog.excerpt || blog.content?.substring(0, 160)}
+        image={
+          blog.image
+            ? `${(import.meta.env.VITE_IMAGE_URL || "http://localhost:5000").replace(/\/$/, "")}${blog.image}`
+            : null
+        }
+        type="article"
+      />
       <Link
         to="/blog"
         className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-12 text-xs font-bold uppercase tracking-widest"
