@@ -14,6 +14,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import AdminDashboard from "./pages/AdminDashboard";
 import BlogEditor from "./pages/BlogEditor";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   useEffect(() => {
@@ -76,9 +77,30 @@ function App() {
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/create" element={<BlogEditor />} />
-          <Route path="/admin/edit/:id" element={<BlogEditor />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/create"
+            element={
+              <ProtectedRoute>
+                <BlogEditor />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/edit/:id"
+            element={
+              <ProtectedRoute>
+                <BlogEditor />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
         <Footer />
       </main>
