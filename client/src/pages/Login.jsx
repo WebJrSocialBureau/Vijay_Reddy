@@ -49,7 +49,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full bg-navy-950/50 border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-accent-red transition-colors"
-              placeholder="admin@vijayreddy.com"
+              placeholder="vijay@pravasamedia.com"
               required
             />
           </div>

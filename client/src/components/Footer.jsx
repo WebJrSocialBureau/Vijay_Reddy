@@ -81,9 +81,12 @@ const Footer = () => {
                   <span className="text-[10px] uppercase font-black tracking-widest text-slate-500">
                     Official Email
                   </span>
-                  <span className="text-sm font-bold text-white group-hover:text-accent-red transition-colors">
+                  <a
+                    href="mailto:vijay@pravasamedia.com"
+                    className="text-sm font-bold text-white group-hover:text-accent-red transition-colors"
+                  >
                     vijay@pravasamedia.com
-                  </span>
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-6 group">
