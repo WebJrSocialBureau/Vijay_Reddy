@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronRight, User } from "lucide-react";
+import { Menu, X, ChevronRight, User, LogOut } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+    navigate("/");
+    setMobileMenu(false);
+  };
 
   useEffect(() => {
     const checkAuth = () => {
@@ -93,13 +102,24 @@ const Navbar = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.2 }}
           >
-            <Link
-              to={isLoggedIn ? "/admin" : "/login"}
-              className="flex items-center gap-2 px-6 py-2.5 glass-premium rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-white hover:bg-accent-red/20 transition-all border border-white/10 hover:border-accent-red/50 active:scale-95 shadow-xl"
-            >
-              <User size={14} className="text-accent-red" />
-              {isLoggedIn ? "Admin" : "Login"}
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link
+                to={isLoggedIn ? "/admin" : "/login"}
+                className="flex items-center gap-2 px-6 py-2.5 glass-premium rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-white hover:bg-accent-red/20 transition-all border border-white/10 hover:border-accent-red/50 active:scale-95 shadow-xl"
+              >
+                <User size={14} className="text-accent-red" />
+                {isLoggedIn ? "Admin" : "Login"}
+              </Link>
+              {isLoggedIn && (
+                <button
+                  onClick={handleLogout}
+                  className="p-2.5 glass rounded-full text-slate-400 hover:text-accent-red transition-all border border-white/10 hover:border-accent-red/30 active:scale-95"
+                  title="Logout"
+                >
+                  <LogOut size={16} />
+                </button>
+              )}
+            </div>
           </motion.div>
         </div>
 
@@ -164,6 +184,31 @@ const Navbar = () => {
                   className="text-accent-red group-hover:translate-x-2 transition-transform"
                 />
               </Link>
+
+              {isLoggedIn && (
+                <button
+                  onClick={handleLogout}
+                  className="mt-2 flex items-center justify-between p-6 glass rounded-2xl border border-white/5 bg-white/5 group"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                      <LogOut size={24} className="text-slate-400" />
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-sm font-black uppercase tracking-widest text-slate-500">
+                        Session control
+                      </span>
+                      <span className="text-xl font-bold text-slate-300">
+                        Logout
+                      </span>
+                    </div>
+                  </div>
+                  <ChevronRight
+                    size={24}
+                    className="text-slate-500 group-hover:translate-x-2 transition-transform"
+                  />
+                </button>
+              )}
             </div>
           </motion.div>
         )}
