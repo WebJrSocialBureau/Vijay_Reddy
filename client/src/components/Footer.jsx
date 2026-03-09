@@ -114,14 +114,18 @@ const Footer = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="flex justify-center"
         >
-          <div className="relative w-fit">
-            <div className="absolute inset-0 bg-accent-red/20 blur-3xl rounded-full"></div>
+          <a
+            href="https://www.bigtvlive.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10 block"
+          >
             <img
               src="LOGO (2).png"
               alt="Big TV Logo"
-              className="relative z-10 h-40 md:h-45 object-contain brightness-110 contrast-125"
+              className="h-40 md:h-45 object-contain brightness-110 contrast-125"
             />
-          </div>
+          </a>
         </motion.div>
 
         {/* Footer Bottom */}
