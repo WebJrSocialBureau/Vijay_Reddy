@@ -4,8 +4,6 @@ import {
   Mail,
   MapPin,
   Linkedin,
-  Twitter,
-  Facebook,
   ExternalLink,
   ArrowRight,
 } from "lucide-react";
@@ -32,18 +30,34 @@ const Footer = () => {
               innovation leads the way for South India."
             </p>
             <div className="flex gap-4">
-              {[Linkedin, Twitter, Facebook].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-accent-red hover:text-white transition-all duration-500 group"
+              <a
+                href="https://www.linkedin.com/in/jignesh-rana-324624b/?skipRedirect=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Jignesh Rana LinkedIn"
+                className="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-accent-red hover:text-white transition-all duration-500 group"
+              >
+                <Linkedin size={20} className="group-hover:scale-110 transition-transform" />
+              </a>
+
+              <a
+                href="https://www.youtube.com/@BIGTVTeluguLive"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Big TV Telugu YouTube"
+                className="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-accent-red hover:text-white transition-all duration-500 group"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="20"
+                  height="20"
+                  className="group-hover:scale-110 transition-transform"
                 >
-                  <Icon
-                    size={20}
-                    className="group-hover:scale-110 transition-transform"
-                  />
-                </a>
-              ))}
+                  <path d="M23.498 6.186a3.01 3.01 0 0 0-2.12-2.128C19.725 3.5 12 3.5 12 3.5s-7.725 0-9.378.558A3.01 3.01 0 0 0 .502 6.186 31.26 31.26 0 0 0 0 12a31.26 31.26 0 0 0 .502 5.814 3.01 3.01 0 0 0 2.12 2.128C4.275 20.5 12 20.5 12 20.5s7.725 0 9.378-.558a3.01 3.01 0 0 0 2.12-2.128A31.26 31.26 0 0 0 24 12a31.26 31.26 0 0 0-.502-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -128,23 +142,34 @@ const Footer = () => {
           </a>
         </motion.div>
 
+        {/* Powered By (SocialBureau) */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-8">
+          <div className="flex flex-row items-center gap-3 text-[9px] md:text-[11px] font-bold text-muted uppercase tracking-[0.2em] mt-6 justify-start w-full text-left">
+            <span>POWERED BY</span>
+
+            <a href="https://www.socialbureau.in/enquiry-form" target="_blank" rel="noopener noreferrer" className="flex justify-start items-center">
+
+              <img
+
+                src="https://www.socialbureau.in/assets/logo.webp"
+
+                alt="SocialBureau"
+
+                className="h-5 md:h-8 w-auto"
+
+              />
+
+            </a>
+
+          </div>
+
+        </div>
+
         {/* Footer Bottom */}
         <div className="border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="max-w-3xl border-accent-red/20 pl-8 md:pl-10 py-3">
             <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">
-              Designed & Developed by{" "}
-              <a
-                style={{ fontFamily: "MyFont, sans-serif" }}
-                href="https://socialbureau.in"
-                className="text-white/80 hover:text-white transition-all duration-300 font-bold tracking-tight relative group inline-block"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="relative z-10">
-                  Social<span className="text-accent-red">B</span>ureau
-                </span>
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-linear-to-r from-accent-red to-red-700 group-hover:w-full transition-all duration-300"></span>
-              </a>
+              © {new Date().getFullYear()} Vijay Reddy Vennam
             </p>
           </div>
           <motion.button
