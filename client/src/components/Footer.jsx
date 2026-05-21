@@ -59,7 +59,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://x.com/VennamVijay"
+                href="https://www.facebook.com/profile.php?id=61587982438209"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Vijay Reddy Vennam X (Twitter)"
@@ -74,6 +74,24 @@ const Footer = () => {
   className="group-hover:scale-110 transition-transform"
 >
   <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.009 10.125 11.927v-8.437H7.078v-3.49h3.047V9.413c0-3.017 1.792-4.688 4.533-4.688 1.313 0 2.686.235 2.686.235v2.963h-1.514c-1.491 0-1.956.93-1.956 1.885v2.265h3.328l-.532 3.49h-2.796V24C19.612 23.082 24 18.092 24 12.073z" />
+</svg>
+              </a>
+              <a
+                href="https://x.com/VennamVijay"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Vijay Reddy Vennam X (Twitter)"
+                className="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-accent-red hover:text-white transition-all duration-500 group"
+              >
+                <svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="currentColor"
+  width="20"
+  height="20"
+  className="group-hover:scale-110 transition-transform"
+>
+  <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.64 7.584H.474l8.6-9.83L0 1.153h7.594l5.243 6.932 6.064-6.932zM17.61 20.644h2.04L6.486 3.24H4.298L17.61 20.644z" />
 </svg>
               </a>
             </div>
